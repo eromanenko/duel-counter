@@ -171,6 +171,10 @@ body {
   box-shadow: 0 5px 10px rgba(122, 34, 255, 0.3);
 }
 
+.start-btn.hidden {
+  display: none !important;
+}
+
 /* Game Screen layout */
 #game-screen {
   background: #000;
