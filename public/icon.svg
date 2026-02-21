@@ -1,5 +1,36 @@
 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <rect width="512" height="512" fill="#090a0f"/>
-  <path d="M256 120 C256 120 180 40 100 100 C20 160 80 280 256 420 C432 280 492 160 412 100 C332 40 256 120 256 120 Z" fill="#e91e63" stroke="#ff4081" stroke-width="12" stroke-linejoin="round"/>
-  <path d="M180 300 L332 180 M180 180 L332 300" stroke="#fff" stroke-width="24" stroke-linecap="round"/>
+
+  <defs>
+    <!-- Slice through the letters. Left part -->
+    <clipPath id="left-cut">
+      <polygon points="0,0 270,0 210,512 0,512" />
+    </clipPath>
+    <!-- Right part (gap of 26px) -->
+    <clipPath id="right-cut">
+      <polygon points="296,0 512,0 512,512 236,512" />
+    </clipPath>
+  </defs>
+
+  <!-- Left Side: V -->
+  <g clip-path="url(#left-cut)">
+    <g transform="skewX(-14) translate(120,0)">
+      <text x="0" y="420" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="340" fill="#ea2233">V</text>
+    </g>
+  </g>
+
+  <!-- Right Side: S -->
+  <g clip-path="url(#right-cut)">
+    <g transform="skewX(-14) translate(120,0)">
+      <text x="140" y="420" font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="340" fill="#0088ff">S</text>
+    </g>
+  </g>
+
+  <!-- Left Lightning Spikes (Red) -->
+  <path d="M 230,341 L 160,490 L 210,390 Z" fill="#ea2233" />
+  <path d="M 200,370 L 130,500 L 180,420 Z" fill="#ea2233" />
+
+  <!-- Right Lightning Spikes (Blue) -->
+  <path d="M 276,171 L 346,22 L 296,122 Z" fill="#0088ff" />
+  <path d="M 306,140 L 376,12 L 326,90 Z" fill="#0088ff" />
 </svg>
