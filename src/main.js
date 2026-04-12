@@ -1,4 +1,5 @@
 import './style.css';
+import NoSleep from 'nosleep.js';
 
 const app = document.querySelector('#app');
 
@@ -7,6 +8,7 @@ let defaultHp = 50;
 let hp = [50, 50]; // [Player 1, Player 2]
 let playerNames = ['Player 1', 'Player 2'];
 let wakeLock = null;
+const noSleep = new NoSleep();
 let deferredPrompt = null;
 let gameInProgress = false;
 
@@ -29,6 +31,7 @@ const renderLayout = () => {
 
 const requestWakeLock = async () => {
   try {
+    noSleep.enable();
     if ('wakeLock' in navigator) {
       wakeLock = await navigator.wakeLock.request('screen');
     }
@@ -117,6 +120,7 @@ const attachEventListeners = () => {
     }
 
     vibrate(20);
+    noSleep.disable();
     if(wakeLock !== null) {
       wakeLock.release()
       .then(() => { wakeLock = null; });
