@@ -3,6 +3,7 @@
   --accent-blue: #00d2ff;
   --accent-purple: #7a22ff;
   --accent-red: #ff3366;
+  --accent-green: #00e676;
   --accent-orange: #ff9933;
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.6);
@@ -78,13 +79,28 @@ body {
 }
 
 .setup-card h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.app-name {
+  font-size: 2rem;
+  font-weight: 800;
   background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.app-version {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+
 }
 
 .setup-card p {
@@ -213,14 +229,9 @@ body {
 }
 
 /* Some dynamic cool gradients */
-.player-panel[data-player="1"] .panel-bg {
-  background: radial-gradient(circle at bottom right, rgba(255, 51, 102, 0.4), rgba(0, 0, 0, 0) 70%),
-    radial-gradient(circle at top left, #1a0812, #000 80%);
-}
-
-.player-panel[data-player="2"] .panel-bg {
-  background: radial-gradient(circle at bottom right, rgba(0, 210, 255, 0.4), rgba(0, 0, 0, 0) 70%),
-    radial-gradient(circle at top left, #051024, #000 80%);
+/* Clean background for players */
+.player-panel .panel-bg {
+  background: #090a0f;
 }
 
 /* Score Area */
@@ -284,8 +295,18 @@ body {
 }
 
 .tap-zone:active {
-  background: rgba(255, 255, 255, 0.05);
-  /* Tap flash */
+  background: rgba(255, 255, 255, 0.08);
+  /* Stronger tap flash */
+}
+
+.tap-zone.minus {
+  background: rgba(255, 51, 102, 0.12);
+  /* Clear red background */
+}
+
+.tap-zone.plus {
+  background: rgba(0, 230, 118, 0.12);
+  /* Clear green background */
 }
 
 /* Tap zones layout properties can be handled via general flex properties if needed. */
@@ -295,26 +316,37 @@ body {
   position: absolute;
   z-index: 4;
   display: flex;
-  gap: 20px;
+  gap: 12px;
   bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  padding: 0 15px;
   pointer-events: auto;
-  /* Catch clicks */
 }
 
 .mini-btn {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
-  border-radius: 50px;
-  padding: 8px 20px;
-  font-size: 1.2rem;
+  flex: 1;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-radius: 14px;
+  padding: 12px 0;
+  font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mini-btn[data-val*="-"] {
+  background: rgba(255, 51, 102, 0.6);
+}
+
+.mini-btn:not([data-val*="-"]) {
+  background: rgba(0, 230, 118, 0.6);
 }
 
 .mini-btn:active {

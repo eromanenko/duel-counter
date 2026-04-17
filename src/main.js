@@ -25,6 +25,8 @@ const renderLayout = () => {
   document.getElementById('score-2').innerText = hp[1];
   document.getElementById('name-1').innerText = playerNames[0];
   document.getElementById('name-2').innerText = playerNames[1];
+  document.querySelector('.app-version').innerText = `v${__APP_VERSION__}`;
+
 
   attachEventListeners();
 };

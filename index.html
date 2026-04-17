@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="uk">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,13 +7,15 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#090a0f">
-  <meta name="description" content="Duel Counter — зручний лічильник життів для карткових ігор. Відстежуйте очки здоров'я для двох гравців з елегантним інтерфейсом.">
+  <meta name="description"
+    content="Duel Counter — a convenient life counter for card games. Track health points for two players with an elegant interface.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://duel-counter.netlify.app/">
-  <meta property="og:title" content="Duel Counter — Лічильник Життів">
-  <meta property="og:description" content="Зручний лічильник життів для карткових ігор. Відстежуйте очки здоров'я для двох гравців з елегантним інтерфейсом.">
+  <meta property="og:title" content="Duel Counter — Life Counter">
+  <meta property="og:description"
+    content="A convenient life counter for card games. Track health points for two players with an elegant interface.">
   <meta property="og:image" content="https://duel-counter.netlify.app/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -21,8 +23,9 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://duel-counter.netlify.app/">
-  <meta name="twitter:title" content="Duel Counter — Лічильник Життів">
-  <meta name="twitter:description" content="Зручний лічильник життів для карткових ігор. Відстежуйте очки здоров'я для двох гравців з елегантним інтерфейсом.">
+  <meta name="twitter:title" content="Duel Counter — Life Counter">
+  <meta name="twitter:description"
+    content="A convenient life counter for card games. Track health points for two players with an elegant interface.">
   <meta name="twitter:image" content="https://duel-counter.netlify.app/og-image.png">
 
   <!-- Telegram -->
@@ -39,7 +42,10 @@
     <!-- Setup Screen -->
     <div id="setup-screen" class="screen">
       <div class="setup-card">
-        <h1>DUEL COUNTER</h1>
+        <h1>
+          <span class="app-name">DUEL COUNTER</span>
+          <span class="app-version"></span>
+        </h1>
         <p>Set Starting Life</p>
 
         <div class="input-group">
@@ -77,8 +83,10 @@
           <div class="tap-zone plus" data-player="2" data-dir="1"></div>
         </div>
         <div class="mini-btn-container">
+          <button class="mini-btn" data-player="2" data-val="-10">-10</button>
           <button class="mini-btn" data-player="2" data-val="-5">-5</button>
           <button class="mini-btn" data-player="2" data-val="5">+5</button>
+          <button class="mini-btn" data-player="2" data-val="10">+10</button>
         </div>
       </div>
 
@@ -102,8 +110,10 @@
           <div class="tap-zone plus" data-player="1" data-dir="1"></div>
         </div>
         <div class="mini-btn-container">
+          <button class="mini-btn" data-player="1" data-val="-10">-10</button>
           <button class="mini-btn" data-player="1" data-val="-5">-5</button>
           <button class="mini-btn" data-player="1" data-val="5">+5</button>
+          <button class="mini-btn" data-player="1" data-val="10">+10</button>
         </div>
       </div>
     </div>
